@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "sass-compiler": " sass src/main.scss src/main.css --watch --no-source-map --style compressed",
     "dev": "concurrently \"yarn start\" \"yarn sass-compiler\"",
-    "build": " CI = react-scripts build",
+    "build": "CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
