@@ -1,0 +1,113 @@
+@use "../abstracts";
+.header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 0, 100% 92%, 0 100%, 0 100%, 0% 60%, 0 0);
+  &__logo {
+    @include abstracts.position(absolute, 3.7rem, 6rem, null, null, null, null);
+    z-index: 1;
+    &__h1 {
+      color: abstracts.$white;
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 0.3rem;
+      cursor: pointer;
+      @include abstracts.responsive(medium) {
+        font-size: 2rem;
+        margin-top: 0.6rem;
+      }
+      @include abstracts.responsive(small) {
+        font-size: 1.8rem;
+        margin-top: 0.7rem;
+      }
+      @include abstracts.responsive(xsmall) {
+        font-size: 1.6rem;
+        margin-top: 0.4rem;
+        @include abstracts.position(
+          absolute,
+          null,
+          -2rem,
+          null,
+          null,
+          null,
+          null
+        );
+      }
+    }
+  }
+  &__video {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      image-rendering: pixelated;
+      animation: headerImage 0.5s linear;
+      @keyframes headerImage {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+    @include abstracts.position(absolute, 0, 0, null, null, 100%, 100%);
+    overflow: hidden;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__contents {
+    @include abstracts.position(absolute, 0, 0, null, null, 100%, 100%);
+    background-color: rgba(0, 0, 0, 0.4);
+    &__text {
+      @include abstracts.align(flex, center, center, 100vh);
+      &__child {
+        &__h1 {
+          color: abstracts.$white;
+          text-transform: uppercase;
+          font-weight: 900;
+          font-size: 4rem;
+          line-height: 2.7rem;
+          letter-spacing: 0.35rem;
+          @include abstracts.animation(heading, 1s, ease-in, -8rem, 0);
+          @include abstracts.responsive(medium) {
+            font-size: 4rem;
+          }
+          @include abstracts.responsive(small) {
+            text-align: center;
+            font-size: 3rem;
+          }
+          @include abstracts.responsive(xsmall) {
+            font-size: 2rem;
+          }
+        }
+        &__p {
+          margin-top: 0.7rem;
+          color: abstracts.$white;
+          font-size: 1.6rem;
+          letter-spacing: 0.11rem;
+          @include abstracts.animation(subHeading, 1s, ease-out, -10rem, 0);
+          @include abstracts.responsive(small) {
+            margin-top: 0.5rem;
+            font-size: 1.4rem;
+            text-align: center;
+            line-height: 2rem;
+          }
+        }
+        &__link {
+          margin-top: 0.8rem;
+          @include abstracts.animation(headerButton, 1s, ease-out, 8rem, 0);
+
+          @include abstracts.responsive(small) {
+            align-items: center;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

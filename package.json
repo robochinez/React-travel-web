@@ -6,13 +6,21 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^6.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet-async": "^1.0.9",
+    "react-icons": "^4.2.0",
+    "react-lazy-load-image-component": "^1.5.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "sass": "^1.37.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "sass-compiler": " sass src/main.scss src/main.css --watch --no-source-map --style compressed",
+    "dev": "concurrently \"yarn start\" \"yarn sass-compiler\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

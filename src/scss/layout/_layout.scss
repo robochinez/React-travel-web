@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+@use "sass:math";
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $x from 1 through 12 {
+  .col-#{$x} {
+    width: 100% /12 * $x;
+    @if $x == 6 {
+      @include responsive(small) {
+        width: 100%;
+      }
+    }
+    @if $x == 3 {
+      @include responsive(medium) {
+        width: 100% / 12 * 4;
+      }
+      @include responsive(small) {
+        width: 50%;
+      }
+      @include responsive(xsmall) {
+        width: 100%;
+      }
+    }
+    @if $x == 4 {
+      @include responsive(medium) {
+        width: 50%;
+      }
+      @include responsive(xsmall) {
+        width: 100%;
+      }
+    }
+    @if $x == 8 {
+      @include responsive(medium) {
+        width: 100%;
+      }
+    }
+  }
+}
