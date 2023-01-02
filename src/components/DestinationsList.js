@@ -1,7 +1,7 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { IoLocationSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { IoLocationSharp } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 const DestinationsList = ({ destination }) => {
   return (
     <div className="col-3 p-15">
